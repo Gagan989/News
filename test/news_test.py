@@ -1,8 +1,5 @@
 import unittest
-from models import source
-from models import article
-Source=source.Source
-Article=article.Article
+from app.models import Source,Article
 
 class SourceTest(unittest.TestCase):
     '''
@@ -25,7 +22,7 @@ class ArticleTest(unittest.TestCase):
     Test class to test the behavior of the article class.
     '''
     def setUp(self):
-        self.new_article=Article("Ethiopia","PM Abiy Ahmed calls on civilians to join", "Tigray war" ,"Tigray crisis","https://www.bbc.com/news/world-africa-58163641","2021","War")
+        self.new_article=Article("BBC", "War" ,"Ethiopian PM Abiy Ahmed calls on civilians to join", "Tigray war" ,"Tigray crisis","https://www.bbc.com/news/world-africa-58163641","11/08/2021")
 
     def  test_instance(self):
         self.assertTrue(isinstance(self.new_article,Article))

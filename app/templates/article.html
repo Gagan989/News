@@ -8,11 +8,10 @@
     <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
 {% endblock %}
 <!-- Content block -->
-{% block content%}    
-<h2>News</h2> 
+{% block content%} 
 
 <ul>
-{{macro.displaySourceList(sourceList)}}              
+    {{macro.displayArticlesList(articleList)}}            
 </ul>
 
-{% endblock %}
+{%endblock %}
