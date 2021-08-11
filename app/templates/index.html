@@ -5,9 +5,16 @@
         {% if title %}
         <title> {{ title }}</title>
         {% else %}
-        <title>News-site</title>
+        <title>News</title>
         {% endif %}
     </head>
+        <h2>News Sources</h2>
+        <ul>
+            {% for source in sourceList%}
+                <li>{{source.name}}</li>
+            {%endfor%}            
+
+        </ul>
     <body>
 
     </body>
