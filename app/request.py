@@ -71,4 +71,16 @@ def get_source(api_key):
 
     return source_object
 
-    return source_results
+def search_source(source_name):
+    search_source_url='https://newsapi.org/v2/everything?q=apple&from=2021-08-10&to=2021-08-10&sortBy=popularity&apiKey=fe2e99be7ea24b9b9ad0000e6b90af33'
+    with urllib.urlopen(search_source_url)as url:
+        search_source_data=url.read()
+        search_source_response=json.loads(search_source_data)
+
+        search_source_results=None
+
+        if search_source_response['sources']:
+            search_source_list=search_source_response['sources']
+            search_source_results=process_results(search_source_list)
+
+    return search_source_results
